@@ -1,0 +1,9 @@
+services: 
+  nats-server: 
+    image: nats
+    container_name: nats-server
+    command: -c /etc/my-server.conf --name nats-server -p 4222
+    volumes: 
+      - ./server.conf:/etc/my-server.conf
+    ports: 
+      - 4222:4222
